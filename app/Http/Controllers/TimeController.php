@@ -12,7 +12,7 @@ class TimeController extends Controller
 {
     public function get_status() {
         # Добавляем 3 часа и получаем московское время, GMT+3
-        $today = Carbon::now()->addHours(4)->toDateString();
+        $today = Carbon::now()->addHours(3)->toDateString();
         $worktime = Worktime::where('user_id', Auth::user()->id)
             ->where('date', $today)
             ->sum('duration');
